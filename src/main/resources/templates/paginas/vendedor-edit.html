@@ -77,27 +77,37 @@
 <section class="corpo">
     <div class="container">
         <h1 class="align-content-center">Editar Vendedor</h1>
-        <form action="" method="post" id="form-cadastro" th:object="${vendedor}">
+        <form action="/salvarvendedor" method="post" id="form-cadastro" th:object="${vendedor}">
+            <div class="form-row">
+                <div class="col-md-2">
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" id="id" name="id" disabled placeholder="Nome"
+                               th:field="*{id}">
+                        <label for="id">Código do vendedor</label>
+                    </div>
+                </div>
+            </div>
             <div class="form-row">
                 <div class="col-md-5">
                     <div class="md-form form-group">
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"
                                th:field="*{nome}">
-                        <label for="nome">Nome do vendedor</label>
+                        <label for="nome">Nome do Vendedor</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="md-form form-group">
-                    <select class="browser-default custom-select">
-                        <option selected>Selecione um Supervisor...</option>
-                        <option value="1">Paludo</option>
-                        <option value="2">Julio</option>
-                        <option value="3">Flander</option>
-                        <option value="3">Alexandra</option>
-                    </select>
+                        <select class="browser-default custom-select">
+                            <option selected>Selecione um Supervisor...</option>
+                            <option value="1">Paludo</option>
+                            <option value="2">Julio</option>
+                            <option value="3">Flander</option>
+                            <option value="3">Alexandra</option>
+                        </select>
                     </div>
                 </div>
             </div>
+
             <div class="form-row">
                 <div class="col-md-8">
                 </div>
@@ -125,7 +135,7 @@
 
 <script type="text/javascript">
     // Material Select Initialization
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.mdb-select').materialSelect();
     });
 </script>
